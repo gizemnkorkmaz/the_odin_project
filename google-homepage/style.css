@@ -1,0 +1,116 @@
+html, body {
+    min-height:100%;
+    
+}
+body {
+    height:100%;
+}
+
+.nav {
+    display: flex; 
+    flex-direction: row;
+    justify-content: flex-end;
+    padding-bottom: 20px;
+}
+
+.nav > a {
+    margin: 10px;
+    text-decoration: none;
+    color: rgba(0,0,0,0.87);
+    font: 13px/27px Roboto,RobotoDraft,Arial,sans-serif;
+}
+.nav > a:hover {
+    text-decoration: underline;
+}
+
+.google-img {
+    padding-top: 20px;
+    height: 92px;
+    width: 272px;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: 15px;
+    padding: 5px;
+}
+
+.search {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+}
+
+.search-input {
+    width: 584px;
+    height: 44px;
+    border-radius: 24px;
+    border: 1px solid #b8b7b7;
+    margin-left: 10px;
+}
+
+.search-icon > img {
+    position: relative;
+    left: 50px;
+    top: 8px;
+    height: 24px;
+    line-height: 24px;
+    width: 24px;
+    text-shadow: 1px 1px 1px #ccc;
+}
+
+.buttons > button {
+    background-color: #f8f9fa;
+    border: 1px solid #f8f9fa;
+    border-radius: 4px;
+    color: #3c4043;
+    font-family: arial,sans-serif;
+    font-size: 14px;
+    text-align: center;
+    margin: 11px 4px;
+    padding: 0 16px;
+    line-height: 27px;
+    height: 36px;
+    min-width: 54px;
+    cursor: pointer;
+}
+
+.lang {
+    font-family: arial,sans-serif;
+    font-size: 14px;
+} 
+.lang > p > a {
+    text-decoration: none;
+}
+
+.footer {
+    background-color: #f2f2f2;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width:100%;
+    padding-right: 5px;
+}
+
+.footer .links {
+    display: flex;
+    flex-direction: row;
+    padding: 12px 10px;
+    flex-wrap: nowrap;
+}
+
+.links {
+    display: flex;
+    justify-content: space-evenly;
+    border-top: 0.5px rgb(177, 176, 176) solid;
+}
+.footer > * > * {
+    font-size: 15px;
+    font-family: arial,sans-serif;
+    color: #70757a;
+    text-decoration: none;
+    padding-left: 25px;
+}
