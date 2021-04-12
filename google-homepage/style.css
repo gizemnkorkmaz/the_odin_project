@@ -53,13 +53,11 @@ body {
 }
 
 .search-icon > img {
-    position: relative;
-    left: 50px;
-    top: 8px;
     height: 24px;
     line-height: 24px;
     width: 24px;
     text-shadow: 1px 1px 1px #ccc;
+    transform: translate(200%, 10px);
 }
 
 .buttons > button {
