@@ -46,7 +46,7 @@ body {
 
 .search-input {
     width: 584px;
-    height: 44px;
+    height: 40px;
     border-radius: 24px;
     border: 1px solid #b8b7b7;
     margin-left: 10px;
@@ -104,11 +104,13 @@ body {
 
 .links {
     display: flex;
-    justify-content: space-evenly;
-    border-top: 0.5px rgb(177, 176, 176) solid;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border-top: 0.5px rgb(206, 206, 206) solid;
 }
-.footer > * > * {
-    font-size: 15px;
+
+.footer > * > * > * {
+    font-size: 14px;
     font-family: arial,sans-serif;
     color: #70757a;
     text-decoration: none;
