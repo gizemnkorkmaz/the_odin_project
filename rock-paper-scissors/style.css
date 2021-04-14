@@ -1,0 +1,30 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-color: rgb(168, 200, 206);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container{
+    padding: 20%;
+    width: 300px;
+    height: 150px;
+    margin: 10px;
+    line-height: 1.6;
+    text-align: center;
+    font-family: 'Zen Dots', cursive;
+}
+
+.btn {
+    margin: 5px;
+    background-color: transparent;
+    border: none;
+    font-size: 40px;
+    white-space:nowrap;
+}
+
+.btn:hover {
+    cursor: pointer;
+    font-size: 65px;
+}

@@ -16,6 +16,12 @@ function computerPlay() {
     return choices[Math.floor(Math.random() * choices.length)]
 }
 
+function disableButton() {
+    buttons.forEach(btn => {
+        btn.disabled = true
+    })
+}
+
 function playRound(playerChoice) {
     let computerChoice = computerPlay()
 
@@ -26,15 +32,17 @@ function playRound(playerChoice) {
         result.innerHTML = `${playerChoice} vs. ${computerChoice}! You got 1 point!`
         if(playerPoints == 5) {
             result.innerHTML = `You won.`
+            disableButton()
         }
     } else if ((playerChoice == computerChoice)) {
         result.innerHTML = `${playerChoice} vs. ${computerChoice}! It's a tie!`
     }
     else {
         compResult.innerHTML = `Computer: ${computerPoints+=1}`
-        result.innerHTML = `${playerChoice} vs. ${computerChoice}! I got 1 point!`
+        result.innerHTML = `${playerChoice} vs. ${computerChoice}! Computer got 1 point!`
         if(computerPoints == 5) {
-            result.innerHTML = `I won.`
+            result.innerHTML = `Computer won.`
+            disableButton()
         }
     }
 
