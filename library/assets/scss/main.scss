@@ -50,7 +50,7 @@ main {
       border-radius: 1rem;
       z-index: 10;
       background-color: $card-background;
-
+      width: 600px;
       padding: 1rem 2rem;
       max-width: 80%;
       font-size: 18px;
@@ -84,11 +84,10 @@ main {
           color: $text-color;
           border: 1px solid grey;
           background-color: $background-color;
-          font-size: 18px;
+          font-size: 12px;
           cursor: pointer;
-          margin-left: 15px;
+          margin: 10px;
           padding: 5px;
-          width: 3rem;
         }
       }
     }

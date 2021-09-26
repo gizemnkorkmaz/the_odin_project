@@ -13,13 +13,8 @@ class Book {
   }
 
   addBookLibrary(book) {
-    myLibrary.push(book);
-  }
-
-  removeBookLibrary(button) {
-    myLibrary = myLibrary.filter((book) => {
-      return book.id !== button.dataset.id;
-    });
+    myLibrary.unshift(book);
+    showBooks();
   }
 }
 
@@ -28,7 +23,7 @@ const fountainhead = new Book(
   "The Fountainhead",
   "Ayn Rand",
   "Fiction",
-  "876",
+  "753",
   true,
   0
 );
@@ -36,7 +31,7 @@ const dune = new Book(
   "Dune",
   "Frank Herbert",
   "Science-fiction",
-  "655",
+  "444",
   true,
   1
 );
@@ -44,7 +39,7 @@ const hamlet = new Book(
   "Hamlet",
   "William Shakespeare",
   "Tragedy",
-  "190",
+  "214",
   false,
   2
 );
@@ -102,7 +97,6 @@ function collectBookData() {
   newBook.addBookLibrary(newBook);
   const modal = addButton.closest(".modal");
   closeModal(modal);
-  showBooks(myLibrary);
 }
 
 addButton.addEventListener("click", collectBookData);
@@ -117,7 +111,7 @@ function showBooks() {
     <li><b>Name:</b> ${book.name}</li>
     <li><b>Author:</b> ${book.author}</li>
     <li><b>Genre:</b> ${book.genre}</li>
-    <li><b>Number of Pages:</b> ${book.numberOfPages}</li>
+    <li><b>Print length:</b> ${book.numberOfPages} pages</li>
     <li><b>Status:</b> ${
       book.isRead
         ? "<i style='color:green'>Read</i>"
@@ -130,3 +124,15 @@ function showBooks() {
 }
 
 showBooks();
+
+const deleteButton = document.querySelectorAll(".delete-btn");
+deleteButton.forEach((button) => {
+  button.addEventListener("click", () => deleteBooks(button));
+});
+
+function deleteBooks(button) {
+  myLibrary = myLibrary.filter((book) => {
+    return button.dataset.id != book.id;
+  });
+  showBooks();
+}
