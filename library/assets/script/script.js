@@ -15,6 +15,12 @@ class Book {
   addBookLibrary(book) {
     myLibrary.push(book);
   }
+
+  removeBookLibrary(button) {
+    myLibrary = myLibrary.filter((book) => {
+      return book.id !== button.dataset.id;
+    });
+  }
 }
 
 //a couple of books to start with
@@ -24,7 +30,7 @@ const fountainhead = new Book(
   "Fiction",
   "876",
   true,
-  1
+  0
 );
 const dune = new Book(
   "Dune",
@@ -32,7 +38,7 @@ const dune = new Book(
   "Science-fiction",
   "655",
   true,
-  2
+  1
 );
 const hamlet = new Book(
   "Hamlet",
@@ -40,7 +46,7 @@ const hamlet = new Book(
   "Tragedy",
   "190",
   false,
-  3
+  2
 );
 fountainhead.addBookLibrary(fountainhead);
 dune.addBookLibrary(dune);
@@ -108,28 +114,19 @@ function showBooks() {
   myLibrary.map((book) => {
     allBooks.innerHTML += `
     <ul class="book-card">
-  <li><b>Name:</b> ${book.name}</li>
-  <li><b>Author:</b> ${book.author}</li>
-  <li><b>Genre:</b> ${book.genre}</li>
-  <li><b>Number of Pages:</b> ${book.numberOfPages}</li>
-  <li><b>Status:</b> ${book.isRead ? "Read" : "Not Read"}</li>
-  <button class="delete-btn" data-id=${book.id}> Delete Book </button>
-  </ul>
+    <li><b>Name:</b> ${book.name}</li>
+    <li><b>Author:</b> ${book.author}</li>
+    <li><b>Genre:</b> ${book.genre}</li>
+    <li><b>Number of Pages:</b> ${book.numberOfPages}</li>
+    <li><b>Status:</b> ${
+      book.isRead
+        ? "<i style='color:green'>Read</i>"
+        : "<i style='color:red'>Not Read</i>"
+    }</li>
+    <button class="delete-btn" data-id=${book.id}> Delete Book </button>
+    </ul>
   `;
   });
-
-  //delete book
-  const deleteButton = document.querySelectorAll(".delete-btn");
-
-  function deleteBook(button) {
-    myLibrary.filter((book) => {
-      return book.id !== button.dataset.id;
-    });
-    showBooks();
-  }
-
-  deleteButton.forEach((button) => {
-    button.addEventListener("click", () => deleteBook(button));
-  });
 }
+
 showBooks();
