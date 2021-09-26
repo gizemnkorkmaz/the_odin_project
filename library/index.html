@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/scss/main.css" />
+    <title>Library App</title>
+  </head>
+  <body>
+    <main>
+      <section class="header">
+        <h1>My Booklist</h1>
+      </section>
+      <section class="add-book">
+        <button data-modal-target="#modal">Add New Book</button>
+        <div class="modal" id="modal">
+          <div class="modal__header">
+            <div class="title">Add Book Info</div>
+            <button data-close-button class="close-btn">&times;</button>
+          </div>
+          <div class="modal__body">
+            <h2>Book Info</h2>
+            <input type="text" placeholder="Book Name" required id="bookName" />
+            <input type="text" placeholder="Author" required id="author" />
+            <input type="text" placeholder="Genre" required id="genre" />
+            <input
+              type="number"
+              placeholder="Number Of Pages"
+              required
+              id="numOfPages"
+            />
+            <select name="status" id="status">
+              <option value="read">Read</option>
+              <option value="to-read">To Read</option>
+              <input type="button" value="Add Book" class="add-btn" />
+            </select>
+          </div>
+        </div>
+        <div id="overlay"></div>
+      </section>
+      <section class="all-books"></section>
+    </main>
+    <script src="./assets/script/script.js"></script>
+  </body>
+</html>
