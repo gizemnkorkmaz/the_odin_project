@@ -9,7 +9,10 @@ function makeGrid(size) {
         const divs = document.createElement('div')
         divs.classList.add('box')
         divContainer.appendChild(divs)
+        divs.style.gridTemplateColumns = `repeat(${size}, 2fr)`
+        divs.style.gridTemplateRows = `repeat(${size}, 2fr)`
     }
+
 }
 
 function makeRgb(div) {

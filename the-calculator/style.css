@@ -1,0 +1,54 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin:0;
+    padding: 0;
+}
+ .calc {
+    border: 1px solid red;
+ }
+
+button {
+    width: 75px;
+    height: 75px;
+    margin:0;
+    padding: 0;
+    background-color: rgb(33, 53, 61);
+    color: whitesmoke;
+    font-size: 40px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.row1, .row2, .row3, .row4, .row5 {
+    display: flex;
+}
+
+#allclear{
+    flex: 2;
+}
+
+#divide {
+    flex: 1;
+}
+
+#zero {
+    flex: 3;
+}
+
+#equal {
+    flex: 1;
+}
+
+.display {
+    border: 1px solid black;
+    height: 50px;
+    text-align: end;
+    font-size: 25px;
+    margin: 0;
+    padding: 0;
+}
