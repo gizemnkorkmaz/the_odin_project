@@ -1,0 +1,231 @@
+//color palette
+$font-color: #fbf5f2;
+$title-color: #f6e2d7;
+$border-color: #ff9558;
+$background-color: #718a66;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: "Noto Sans Display", sans-serif;
+  font-size: 18px;
+  background-color: $background-color;
+  color: $font-color;
+}
+
+main {
+  .header {
+    text-align: center;
+    color: $title-color;
+    font-size: 1.5rem;
+    letter-spacing: 4px;
+    font-weight: 900;
+  }
+  .todos {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 2rem;
+    @media (max-width: 820px) {
+      flex-direction: column-reverse;
+      align-items: center;
+      gap: 3rem;
+    }
+    .project-list {
+      padding: 0.5rem 6rem;
+      font-size: 16px;
+
+      @media (max-width: 820px) {
+        padding: 0;
+      }
+      &__title {
+        color: $title-color;
+        letter-spacing: 1.5px;
+      }
+      &__items {
+        padding-left: 1.2rem;
+        letter-spacing: 1.5px;
+        cursor: pointer;
+        list-style-type: circle;
+        li {
+          padding-bottom: 0.5rem;
+        }
+        li:hover {
+          opacity: 0.7;
+        }
+      }
+      .create-lists {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        input {
+          background-color: inherit;
+          border: none;
+          border-bottom: 1px solid $border-color;
+          font-size: inherit;
+          color: $title-color;
+        }
+        .btn {
+          cursor: pointer;
+          background: transparent;
+          color: $title-color;
+          border: 0;
+          font-size: 22px;
+          font-weight: 900;
+          padding-left: 1rem;
+        }
+        .btn:hover {
+          opacity: 0.7;
+        }
+      }
+    }
+    .todo-list {
+      padding: 0.5rem 6rem;
+      @media (max-width: 820px) {
+        padding: 1rem;
+      }
+      background-color: rgb(206, 189, 189, 0.3);
+      &__header {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        color: $title-color;
+        letter-spacing: 1.5px;
+        font-style: italic;
+        font-size: 20px;
+        padding: 0;
+
+        p {
+          font-size: 12px;
+        }
+      }
+      &__items {
+        .tasks {
+          letter-spacing: 1.5px;
+          display: flex;
+          flex-direction: column;
+
+          padding-left: 0.4rem;
+          .task {
+            padding-bottom: 0.4rem;
+            position: relative;
+            [type="checkbox"] {
+              opacity: 0;
+              position: absolute;
+            }
+            [type="checkbox"]:checked + label .custom-checkbox {
+              background: $border-color;
+              box-shadow: inset 0 0 4px $background-color;
+            }
+            [type="checkbox"]:checked + label {
+              opacity: 0.5;
+            }
+            .custom-checkbox {
+              display: inline-block;
+              width: 0.75rem;
+              height: 0.75rem;
+              cursor: pointer;
+              border: 2px solid $border-color;
+              border-radius: 50%;
+              margin-right: 0.75rem;
+              transform: scale(1);
+              transition: transform 300ms ease-in-out;
+            }
+          }
+          .task::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 1.2em;
+            height: 2px;
+            opacity: 0.3;
+            background: $border-color;
+          }
+          .task:hover .custom-checkbox {
+            transform: scale(1.2);
+          }
+          .task label {
+            display: inline-flex;
+            align-items: center;
+            position: relative;
+            padding-bottom: 0.5em;
+            margin-bottom: 1em;
+          }
+          .task label::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 35%;
+            height: 2px;
+            background: $border-color;
+            transform: scale(0);
+            transform-origin: right;
+            transition: transform 150ms ease-in-out;
+          }
+          [type="checkbox"]:checked + label::after {
+            transform: scale(1);
+            transform-origin: left;
+          }
+        }
+
+        .new-task-creator {
+          display: flex;
+          cursor: pointer;
+          background: transparent;
+          color: $title-color;
+          border: 0;
+          font-size: 18px;
+          input {
+            background-color: inherit;
+            border: none;
+            border-bottom: 1px solid $border-color;
+            font-size: inherit;
+            color: $title-color;
+            margin: 2rem 0.6rem;
+          }
+          .create-btn {
+            cursor: pointer;
+            background: transparent;
+            color: $title-color;
+            border: 0;
+            font-size: 22px;
+            font-weight: 900;
+            padding-left: 1rem;
+          }
+          .create-btn:hover {
+            opacity: 0.7;
+          }
+        }
+
+        .delete-stuff {
+          display: flex;
+          justify-content: space-between;
+          font-size: 12px;
+          padding-top: 2rem;
+
+          .btn {
+            cursor: pointer;
+            background: none;
+            border: none;
+
+            font-size: inherit;
+            color: $title-color;
+          }
+          .btn:hover {
+            opacity: 0.7;
+          }
+        }
+      }
+    }
+  }
+}
