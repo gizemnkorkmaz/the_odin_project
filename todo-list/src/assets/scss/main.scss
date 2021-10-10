@@ -61,7 +61,11 @@ main {
         li:hover {
           opacity: 0.7;
         }
+        .active-list {
+          font-weight: 900;
+        }
       }
+
       .create-lists {
         display: flex;
         align-items: center;
@@ -72,6 +76,9 @@ main {
           border-bottom: 1px solid $border-color;
           font-size: inherit;
           color: $title-color;
+        }
+        input:focus {
+          opacity: 0.3;
         }
         .btn {
           cursor: pointer;
@@ -192,6 +199,9 @@ main {
             font-size: inherit;
             color: $title-color;
             margin: 2rem 0.6rem;
+          }
+          input:focus {
+            opacity: 0.3;
           }
           .create-btn {
             cursor: pointer;
